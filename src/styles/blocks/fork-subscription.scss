@@ -1,0 +1,227 @@
+@import "../mixins";
+
+
+@import "../fonts";
+@import "../variables";
+
+
+html, body {
+  min-width: 320px;
+  max-width: 1200px;
+}
+
+.subscript {
+  background-color: #4e3c4e;
+  @include flex(center, column);
+  padding: 64px 10px 79px 10px;
+
+  &__tittle {
+    font: 28px 'Montserrat-Bold';
+    color: $whiteColor;
+    text-transform: capitalize;
+    text-align: center;
+    line-height: 1.49;
+    padding: 0 0 47px 0;
+  }
+}
+
+.parent-table {
+  @include flex(center, row wrap);
+  padding: 0 5px 0 5px;
+}
+
+.table {
+  min-width: fit-content;
+  width: 256px;
+  @include flex(center, column);
+  flex: 1 1 auto;
+  background-color: rgba(255, 255, 255, .1);
+  margin: 0 0 14px 0;
+
+  &--highlighted {
+    width: 290px;
+    background-color: $highlighted;
+    margin: 0 0 16px 0;
+  }
+
+  &__header {
+    width: 100%;
+    height: 97px;
+    @include flex(center, column);
+    background-color: rgba(255, 255, 255, .1);
+    font: 24px "Montserrat-Regular";
+    color: $whiteColor;
+    text-transform: uppercase;
+    padding: 10px 0 0 0;
+    margin-bottom: 24px;
+
+    &--highlighted {
+      margin-bottom: 4px;
+      height: 111px;
+      background-color: $highlightedHeader;
+    }
+
+  }
+
+  &__price {
+    padding: 0 0 12px 0;
+
+    &--highlighted {
+      padding: 0 0 4px 0;
+    }
+  }
+
+  &__symbol {
+    font: 60px "Montserrat-Regular";
+    color: $whiteColor;
+
+    &--highlighted {
+      font-size: 84px;
+    }
+  }
+
+  &__number {
+    font: 60px "Montserrat-Bold";
+    color: $whiteColor;
+
+    &--highlighted {
+      font-size: 84px;
+    }
+  }
+
+  &__times {
+    font: 14px "Montserrat-Regular";
+    color: rgba(255, 255, 255, .2);
+    text-transform: uppercase;
+    padding: 0 0 36px 0;
+
+    &--highlighted {
+      padding: 0 0 46px 0;
+    }
+  }
+
+  &__line {
+    width: 60px;
+    height: 5px;
+    border: none;
+    background-color: $lineColor;
+    margin: 0 0 26px 0;
+
+    &--highlighted {
+      margin: 0 0 36px 0;
+    }
+  }
+
+  &__license {
+    @include flex(center, column);
+    padding: 0 0 60px 0;
+
+    &--correct {
+      padding: 0 0 34px 0;
+    }
+
+    &--highlighted {
+      padding: 0 0 77px 0;
+
+    }
+  }
+
+  &__licence-txt {
+    font: 16px "Montserrat-Regular";
+    color: $whiteColor;
+    text-transform: capitalize;
+    line-height: 1.67;
+    text-align: center;
+
+    &--highlighted {
+      padding: 0 0 6px 0;
+    }
+
+    &--correct {
+      padding: 0 0 2px 0;
+    }
+  }
+}
+
+.btn-purchase {
+  @include flex(center, column);
+  width: 160px;
+  height: 42px;
+  background-color: rgba(255, 255, 255, .1);
+  font: 15px "Montserrat-Regular";
+  color: $whiteColor;
+  border-radius: 22px;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 0 0 38px 0;
+
+  &--highlighted {
+    margin: 0 0 46px 0;
+    width: 190px;
+    height: 52px;
+  }
+}
+
+@media screen and (min-width: 481px) {
+
+  .subscript {
+
+    &__tittle {
+      font-size: 42px;
+    }
+  }
+  .parent-table {
+    @include flex(center, row wrap);
+    flex: 1 1 auto;
+  }
+
+  .table {
+    margin: 0 20px 41px 18px;
+    width: 40%;
+
+    &--highlighted {
+      width: 45%;
+      margin: 0 10px 41px 0;
+    }
+
+  }
+
+}
+
+@media screen and (min-width: 993px) {
+
+  .subscript {
+    padding: 64px 10px 79px 10px;
+    margin-top: -13px;
+
+    &__tittle {
+      font-size: 43px;
+    }
+  }
+  .parent-table {
+    @include flex(center, row);
+    flex: 1 1 10em;
+
+  }
+
+  .table {
+    margin: 0 10px 0 0;
+    min-width: 211px;
+    width: calc(20% + 4em);
+    max-width: 290px;
+    height: 460px;
+
+
+    &:last-child {
+      margin: 0 0 0 15px;
+    }
+
+
+    &--highlighted {
+      width: 299px;
+      margin: 6px 0 0 0;
+      height: 560px;
+    }
+
+  }
+}
