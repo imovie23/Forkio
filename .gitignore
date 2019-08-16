@@ -1,0 +1,10 @@
+.idea/
+*.iml
+
+/node_modules
+
+/dist
+
+/bower_components
+
+package-lock.json

@@ -4,3 +4,47 @@
 	align-items: center;
 }
 
+@mixin font-face( $font-name, $font-path, // path + file name. Ex : path/to/font/filename
+$font-weight: 400, $font-style: normal, $support-required: 'modern') {
+	@font-face {
+		font-family: $font-name;
+		font-style : $font-style;
+		font-weight: $font-weight;
+		@if $support-required=='oldie' {
+			src: url('#{$font-path}.eot');
+			src: url('#{$font-path}.eot?#iefix') format('embedded-opentype'),
+			url('#{$font-path}.woff2') format('woff2'),
+			url('#{$font-path}.woff') format('woff'),
+			url('#{$font-path}.ttf') format('truetype');
+		}
+		@if $support-required=='recent' {
+			src: url('#{$font-path}.woff2') format('woff2'),
+			url('#{$font-path}.woff') format('woff'),
+			url('#{$font-path}.ttf') format('truetype');
+		}
+		@if $support-required=='modern' {
+			src: url('#{$font-path}.woff2') format('woff2'),
+			url('#{$font-path}.woff') format('woff');
+		}
+	}
+	@if $support-required !='oldie' and $support-required !='recent' and $support-required !='modern' {
+		@error 'Invalid support-required value. Must be "oldie"==>IE8 and above/ Android native browser 4+/ Safari 4.3 OR "recent"==>IE9+/ Android native browser 4.0+/ Safari 4.3+ OR "modern"==>IE9+/ Android native browser 4.4+/ Safari 5.1+';
+	}
+}
+
+@mixin for-size($range) {
+	$tablet-portrait: 640px;
+	$tablet-landscape: 980px;
+	$desktop: 1200px;
+	$desktop-large: 1800px;
+
+	@if $range == tablet-portrait {
+		@media (min-width: $tablet-portrait) { @content; }
+	} @else if $range == tablet-landscape {
+		@media (min-width: $tablet-landscape) { @content; }
+	} @else if $range == desktop {
+		@media (min-width: $desktop) { @content; }
+	} @else if $range == desktop-large {
+		@media (min-width: $desktop-large) { @content; }
+	}
+}
