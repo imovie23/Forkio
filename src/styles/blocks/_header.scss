@@ -1,0 +1,37 @@
+.header {
+	background-color: $headerBg;
+
+	&__wrap {
+		position: relative;
+		display: flex;
+		padding: 4px 10px;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__nav {
+		position: absolute;
+		left: 0;
+		top: 100%;
+		width: 100%;
+		padding: 0 10px;
+		display: none;
+
+		&.is-open {
+			display: block;
+		}
+	}
+
+	&__btn {
+		@include font($Montserrat, 700);
+		font-size: 15px;
+		width: 120px;
+		padding: .7em 1.6em .8em;
+	}
+}
+
+.logo {
+	&__text {
+		display: none;
+	}
+}

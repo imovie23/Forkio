@@ -1,0 +1,30 @@
+.menu {
+	background-color: #333;
+
+	&__item-link {
+		position: relative;
+		display: block;
+		padding: 27px 30px 28px;
+		border-bottom: 2px solid #3b3b3b;
+		font-size: 26px;
+		line-height: 1.2;
+		text-decoration: none;
+		color: $white;
+
+		&:active {
+			color: $primary;
+
+			&::before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				display: block;
+				width: 8px;
+				height: 52px;
+				background-color: $primary;
+			}
+		}
+	}
+}
