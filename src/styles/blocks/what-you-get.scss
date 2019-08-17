@@ -46,28 +46,28 @@ html, body {
 
   &__image {
     margin: 0 0 26px 18px;
-    width: 111px;
+    //width: 111px;
     height: 64px;
-    background-image: url('../../img/icon.png');
+    //background-image: url('../../img/icon.png');
     background-repeat: no-repeat;
 
     &--clock {
       margin: 0 0 24px -9px;
       width: 90px;
       height: 80px;
-      background-image: url('../../img/icon2.png');
+      //background-image: url('../../img/icon2.png');
     }
     &--glass {
       margin: 0 0 21px -23px;
       width: 60px;
       height: 84px;
-      background-image: url('../../img/icon3.png');
+      //background-image: url('../../img/icon3.png');
     }
     &--timer {
       margin: 8px 0 23px -10px;
       width: 71px;
       height: 71px;
-      background-image: url('../../img/icon4.png');
+      //background-image: url('../../img/icon4.png');
     }
   }
 
@@ -112,17 +112,17 @@ html, body {
     padding: 0 0 38px 12px;
 
     &__image {
-      margin: 15px 25px 13px 2px;
-      width: 197px;
+      margin: 15px 5px 13px 2px;
+      //width: 197px;
       height: 64px;
 
       &--clock {
-        margin: 15px 36px 13px 2px;
+        margin: 15px 23px 13px 2px;
         height: 80px;
       }
 
       &--glass {
-        margin: 13px 19px 13px 19px;
+        margin: 13px 31px 13px 19px;
         height: 84px;
       }
 
@@ -156,16 +156,16 @@ html, body {
   .opportunities {
 
     &__tittle {
-      margin: 19px 106px 0 0;
+      margin: 19px 26px 0 0;
       padding: 0 0 0 0;
       align-self: flex-end;
     }
 
     &__image {
       align-self: flex-end;
-      width: 617px;
+      width: 45%;
       height: 451px;
-      margin: -425px 0 7px 0;
+      margin: -360px 0 7px 0;
     }
   }
 
@@ -181,10 +181,14 @@ html, body {
   .categories {
     padding: 0 0 10px 0;
     &__image {
-      margin: -21px 8px 0 0;
+      margin: -21px 0 0 0;
       padding: 0 0 0 0;
       width: 301px;
       height: 85px;
+
+      &--correct {
+        margin-left: -9px
+      }
     }
   }
 
