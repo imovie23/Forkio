@@ -45,7 +45,7 @@ $font-weight: 400, $font-style: normal, $support-required: 'modern') {
 	} @else if $range == desktop {
 		@media (min-width: $desktop) { @content; }
 	} @else if $range == desktop-large {
-		@media (min-width: $desktoplarge) { @content; }
+		@media (min-width: $desktopLarge) { @content; }
 	}
 }
 
