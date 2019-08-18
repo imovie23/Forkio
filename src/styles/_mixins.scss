@@ -33,19 +33,19 @@ $font-weight: 400, $font-style: normal, $support-required: 'modern') {
 }
 
 @mixin for-size($range) {
-	$tablet-portrait: 640px;
-	$tablet-landscape: 980px;
-	$desktop: 1200px;
-	$desktop-large: 1800px;
+	$mobileLandscape: 481px;
+	$tablet: 768px;
+	$desktop: 993px;
+	$desktopLarge: 1200px;
 
-	@if $range == tablet-portrait {
-		@media (min-width: $tablet-portrait) { @content; }
-	} @else if $range == tablet-landscape {
-		@media (min-width: $tablet-landscape) { @content; }
+	@if $range == mobile-landscape {
+		@media (min-width: $mobileLandscape) { @content; }
+	} @else if $range == tablet {
+		@media (min-width: $tablet) { @content; }
 	} @else if $range == desktop {
 		@media (min-width: $desktop) { @content; }
 	} @else if $range == desktop-large {
-		@media (min-width: $desktop-large) { @content; }
+		@media (min-width: $desktoplarge) { @content; }
 	}
 }
 

@@ -5,5 +5,16 @@
 	color: $white;
 	text-decoration: none;
 	text-align: center;
+	transition: color, background-color .2s;
+	outline: none;
+
+	&:hover {
+		@include for-size(desktop) {
+			@media(hover: hover) and (pointer: fine) {
+				background-color: $white;
+				color: $primary;
+			}
+		}
+	}
 }
 

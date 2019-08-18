@@ -3,6 +3,6 @@ const headerNav = document.querySelector('.header__nav');
 
 navToggle.addEventListener('click', handleToggle);
 
-function handleToggle(event) {
+function handleToggle() {
 	headerNav.classList.toggle('is-open');
 }
