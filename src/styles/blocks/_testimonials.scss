@@ -1,25 +1,56 @@
 .testimonials {
-	padding-bottom: 70px;
+	padding: 60px 0 70px;
 	background-color: #4a3b4e; // temp
 
+	@include for-size(tablet) {
+		padding: 70px 0 80px;
+	}
+
 	&__title {
-		padding: 50px 25px 30px;
+		max-width: 1200px;
+		margin-bottom: 40px;
+		padding: 0 10px 0;
 		color: $white;
 		font-size: 36px;
 		@include font($Montserrat, 700);
 		text-align: center;
 		line-height: 1.3;
+
+		@include for-size(tablet) {
+			font-size: 42px;
+		}
 	}
 
 	&__row {
-		display: flex;
-		flex-direction: column;
-		flex-wrap: wrap;
+		@include for-size(mobile-landscape) {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-column-gap: 20px;
+		}
+
+		@include for-size(tablet) {
+			grid-column-gap: 80px;
+		}
+	}
+
+	&__col {
+		margin-bottom: 40px;
+
+		@include for-size(mobile-landscape) {
+			//flex: 0 0 50%;
+			//max-width: 50%;
+		}
 	}
 
 	&__img-wrap {
 		margin-bottom: 25px;
 		text-align: center;
+
+		@include for-size(mobile-landscape) {
+			height: 64px;
+			@include flex-center;
+			margin-bottom: 35px;
+		}
 	}
 
 	&__img {
@@ -29,27 +60,41 @@
 	}
 
 	&__text {
-		margin-bottom: 40px;
 		padding: 0 40px;
 		color: $white;
 		font-size: 16px;
 		@include font($Lato, 700, italic);
 		text-align: center;
+
+		@include for-size(mobile-landscape) {
+			padding: 0 10px;
+		}
 	}
 
 	&__footer	{
 		display: none;
+		margin: 0 auto 15px;
 		opacity: 0.8;
 		color: #a291a5;
 		font-size: 14px;
 		@include font($Lato);
 		line-height: 1.5;
 		text-align: center;
+
+		@include for-size(mobile-landscape) {
+			display: block;
+			width: 90%;
+		}
 	}
 
 	&__separator {
 		height: 2px;
+		margin: 0 auto;
 		padding: 0 20px;
 		background-color: #645766;
+
+		@include for-size(mobile-landscape) {
+			width: 95%;
+		}
 	}
 }
