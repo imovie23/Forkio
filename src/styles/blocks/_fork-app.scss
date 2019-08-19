@@ -12,6 +12,15 @@
 		padding-top: 50px;
 	}
 
+	@include for-size(desktop) {
+		padding-top: 60px;
+		height: 750px;
+	}
+
+	@include for-size(desktop-large) {
+		background-size: cover;
+	}
+
 	&__title {
 		margin-bottom: 15px;
 		color: $white;
@@ -23,22 +32,37 @@
 			margin-bottom: 20px;
 			font-size: 72px;
 		}
+
+		@include for-size(desktop) {
+			font-size: 82px;
+		}
 	}
 
 	&__subtitle {
-		font-size: 18px;
 		text-align: center;
 		line-height: 2;
 
 		&--violet {
 			color: $primary;
-			font-size: 24px;
+			font-size: 18px;
+
+			@include for-size(tablet) {
+				font-size: 24px;
+			}
+
+			@include for-size(desktop) {
+				font-size: 30px;
+			}
 		}
 
 		&--grey {
 			color:#848e97;
 			font-size: 14px;
 			text-transform: uppercase;
+
+			@include for-size(desktop) {
+				font-size: 16px;
+			}
 		}
 	}
 
@@ -49,6 +73,7 @@
 		transform: translate(-50%, -50%);
 		width: 300px;
 		padding: 15px 10px;
+		border: 1px solid $primary;
 		border-radius: 25px;
 		background-color: $primary;
 		color: $white;
@@ -64,6 +89,15 @@
 			padding: 20px 15px;
 			border-radius: 30px;
 			font-size: 21px;
+		}
+
+		&:hover {
+			@include for-size(desktop) {
+				@media(hover: hover) and (pointer: fine) {
+					background-color: $white;
+					color: $primary;
+				}
+			}
 		}
 	}
 }
