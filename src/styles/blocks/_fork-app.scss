@@ -1,0 +1,50 @@
+.fork-app {
+	position: relative;
+	height: 615px;
+	padding-top: 35px;
+	background-color: #010005;
+	background-image: url('../img/notebook.jpg');
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+
+	&__title {
+		margin-bottom: 15px;
+		color: $white;
+		font-size: 48px;
+		@include font($Montserrat, 700);
+		text-align: center;
+	}
+
+	&__subtitle {
+		font-size: 18px;
+		text-align: center;
+		line-height: 2;
+
+		&--violet {
+			color: $primary;
+		}
+
+		&--grey {
+			color:#848e97;
+			text-transform: uppercase;
+		}
+	}
+
+	&__download-btn {
+		position: absolute;
+		top: 100%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 300px;
+		padding: 15px 10px;
+		border-radius: 20px;
+		background-color: $primary;
+		color: $white;
+		font-size: 18px;
+		@include font($Montserrat, 700);
+		text-decoration: none;
+		text-align: center;
+		transition: color, background-color .2s;
+		outline: none;
+	}
+}
