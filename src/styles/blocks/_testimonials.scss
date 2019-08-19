@@ -1,16 +1,16 @@
 .testimonials {
-	padding: 60px 0 70px;
+	padding: 60px 0 5px;
 	background-color: #4a3b4e; // temp
 	background-image: url("../img/testmonials-bg.jpg");
 	background-repeat: no-repeat;
 	background-position: 50% 0;
 
 	@include for-size(tablet) {
-		padding: 70px 0 80px;
+		padding: 70px 0 5px;
 	}
 
 	@include for-size(desktop) {
-		padding: 80px 0 70px;
+		padding: 80px 0 5px;
 	}
 
 	@include for-size(desktop-large) {
