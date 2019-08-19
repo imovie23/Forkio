@@ -11,7 +11,10 @@ html, body {
 }
 
 .subscript {
-  background-color: #4e3c4e;
+  background-color: $bgcSubColor;
+  background-image: url('../../img/Layer_sub.png');
+  background-repeat: no-repeat;
+  background-size: cover;
   @include flex(center, column);
   padding: 64px 10px 79px 10px;
 
@@ -224,4 +227,11 @@ html, body {
     }
 
   }
+  .btn-purchase:hover {
+    background-color: $hoverBtn;
+    font-family: "Montserrat-Bold", sans-serif;
+    color: $txtHover;
+
+  }
+  
 }
