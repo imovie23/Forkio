@@ -187,6 +187,16 @@
     &:first-child {
       padding-right: 15px
     }
+    &__image--clock {
+      margin-left: -15px;
+      margin-right: 15px;
+    }
+
+    &__image--timer {
+      margin-top: 15px;
+      margin-left: -10px;
+      margin-right: 10px;
+    }
   }
 
 }
