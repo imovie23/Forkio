@@ -4,3 +4,9 @@
 	align-items: center;
 }
 
+@mixin flex($justify-content, $flex_flow) {
+	display: flex;
+	flex-flow: $flex_flow;
+	justify-content: $justify-content;
+	align-items: center;
+}

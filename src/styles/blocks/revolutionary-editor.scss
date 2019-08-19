@@ -1,0 +1,140 @@
+@import '../../styles/fonts';
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+html, body {
+  min-width: 320px;
+  max-width: 1200px;
+  height: 100%;
+}
+
+.editor {
+  @include flex(center, column);
+  width: 100%; //!!!!!!!!
+  padding: 30px 10px 0 10px;
+  background-color: $whiteColor;
+
+  &__txt-trial {
+    font: 14px 'Montserrat-Regular';
+    text-transform: capitalize;
+    color: $trialColor;
+    padding-bottom: 58px;
+  }
+
+  &__tittle {
+    font: 26px 'Montserrat-Bold';
+    color: $revolEditorColor;
+    line-height: 1.62;
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 7px;
+  }
+
+  &__sub-tittle {
+    padding: 0 18px 33px 16px;
+    font: 14px 'Lato-Regular';
+    color: $revolSubTittleColor;
+    line-height: 1.48;
+    text-align: center;
+
+  }
+}
+
+
+.btn {
+  float: left;
+  padding: 3px 10px;
+  background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
+  border: 1px solid $sotialBtnColor;
+  border-radius: .25em;
+  color: $sotialBtnTxtColor;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 18px;
+  text-transform: capitalize;
+}
+
+.octicon {
+  width: 14px;
+  height: 16px;
+  display: inline-block;
+  fill: currentColor;
+  vertical-align: text-bottom !important;
+}
+
+.social-action {
+  @include flex(center, row wrap);
+  padding-bottom: 90px;
+  list-style: none;
+
+  &__items {
+    margin: 0 0 0 5px;
+
+    &:last-child {
+      margin-top: 18px;
+    }
+  }
+
+  &__btn {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  &__counter {
+    float: left;
+    padding: 3px 10px;
+    margin-right: 4px;
+    background-color: $whiteColor;
+    border: 1px solid rgba(27, 31, 35, .2);
+    border-bottom-right-radius: 3px;
+    border-left: 0;
+    border-top-right-radius: 3px;
+    color: $sotialBtnTxtColor;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+    text-decoration: none;
+  }
+
+}
+
+
+@media screen and (min-width: 403px) {
+  .social-action__items:last-child {
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 480px) {
+
+  .editor {
+    padding: 43px 10px 0 10px;
+
+    &__txt-trial {
+      padding-bottom: 74px;
+    }
+
+    &__tittle {
+      font-size: 42px;
+      padding-bottom: 16px;
+    }
+
+    &__sub-tittle {
+      font-size: 20px;
+    }
+  }
+
+}
+
+@media screen and (min-width: 1200px) {
+  .editor {
+    &__tittle {
+      font-size: 54px;
+    }
+
+    &__sub-tittle {
+      font-size: 20px;
+    }
+  }
+}

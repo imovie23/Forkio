@@ -1,0 +1,195 @@
+@import "../mixins";
+@import "../fonts";
+@import "../variables";
+
+html, body {
+
+  min-width: 320px;
+
+  max-width: 1200px;
+
+}
+
+.opportunities {
+  @include flex(center, column);
+  background-color: $opportunitiesBGColor;
+  padding: 25px 0 2px 0;
+
+  &__tittle {
+    padding: 0 28px 37px 21px;
+    font: 31px "Montserrat-Bold";
+    color: $opportunitiesTittleColor;
+    text-align: center;
+    line-height: 1.21;
+  }
+
+  &__image {
+    width: 100%;
+    height: 380px;
+    background-image: url('../../img/editor_img.png');
+    background-repeat: no-repeat;
+    background-position: 5px -5px;
+    background-size: cover;
+  }
+
+
+}
+
+.products-oppor{
+  padding: 0 10px 23px 10px;
+}
+
+.categories {
+  padding: 0 0 31px 5px;
+  list-style: none;
+  @include flex(center, row wrap);
+
+  &__image {
+    margin: 0 0 26px 18px;
+    //width: 111px;
+    height: 64px;
+    //background-image: url('../../img/icon.png');
+    background-repeat: no-repeat;
+
+    &--clock {
+      margin: 0 0 24px -9px;
+      width: 90px;
+      height: 80px;
+      //background-image: url('../../img/icon2.png');
+    }
+    &--glass {
+      margin: 0 0 21px -23px;
+      width: 60px;
+      height: 84px;
+      //background-image: url('../../img/icon3.png');
+    }
+    &--timer {
+      margin: 8px 0 23px -10px;
+      width: 71px;
+      height: 71px;
+      //background-image: url('../../img/icon4.png');
+    }
+  }
+
+  &__txt {
+    @include flex(center, column);
+  }
+
+  &__tittle {
+    padding: 0 0 12px 0;
+    font: 16px "Montserrat-Regular";
+    color: $categoriesTittleColor;
+  }
+
+  &__sub-tittle {
+    padding: 0 20px 0 21px;
+    font: 13px 'Lato-Regular';
+    color: $trialColor;
+    text-align: center;
+    line-height: 1.62;
+  }
+}
+
+
+@media screen and (min-width: 480px) {
+
+  .opportunities {
+    padding: 45px 0 2px 0;
+
+    &__tittle {
+      padding: 0 28px 48px 21px;
+      font-size: 42px;
+    }
+
+    &__image {
+      height: 475px;
+      background-position: 10px -20px;
+    }
+  }
+
+  .categories {
+    @include flex(center, row);
+    padding: 0 0 38px 12px;
+
+    &__image {
+      margin: 15px 5px 13px 2px;
+      //width: 197px;
+      height: 64px;
+
+      &--clock {
+        margin: 15px 23px 13px 2px;
+        height: 80px;
+      }
+
+      &--glass {
+        margin: 13px 31px 13px 19px;
+        height: 84px;
+      }
+
+      &--timer {
+        margin: 24px 22px 13px 15px;
+        height: 72px;
+      }
+    }
+
+    &__txt {
+      @include flex(center, column);
+      align-items: flex-start;
+    }
+
+    &__tittle {
+      text-align: left;
+    }
+
+    &__sub-tittle {
+      padding: 0 45px 0 0;
+      font-size: 15px;
+      text-align: inherit;
+      line-height: 1.4;
+    }
+  }
+
+}
+
+@media screen and (min-width: 992px) {
+
+  .opportunities {
+
+    &__tittle {
+      margin: 19px 26px 0 0;
+      padding: 0 0 0 0;
+      align-self: flex-end;
+    }
+
+    &__image {
+      align-self: flex-end;
+      width: 45%;
+      height: 451px;
+      margin: -360px 0 7px 0;
+    }
+  }
+
+
+  .products-oppor {
+    align-self: flex-start;
+    margin: -30px 0px 0 73px;
+    padding: 0 0 0 0;
+    width: 50%;
+
+  }
+
+  .categories {
+    padding: 0 0 10px 0;
+    &__image {
+      margin: -21px 0 0 0;
+      padding: 0 0 0 0;
+      width: 301px;
+      height: 85px;
+
+      &--correct {
+        margin-left: -9px
+      }
+    }
+  }
+
+}
