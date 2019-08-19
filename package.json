@@ -1,7 +1,7 @@
 {
-  "name": "homework-1",
+  "name": "step-project-forkio",
   "version": "1.0.0",
-  "description": "",
+  "description": "html-css step project Forkio",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

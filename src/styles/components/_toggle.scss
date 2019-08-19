@@ -1,0 +1,27 @@
+.toggle {
+	width: 27px;
+	border: none;
+	padding: 0;
+	background-color: transparent;
+	vertical-align: top;
+
+	&:focus {
+		outline: none;
+	}
+
+	&__bar {
+		display: block;
+		height: 3px;
+		margin-bottom: 6px;
+		background-color: $white;
+
+		&:first-child {
+			width: 20px;
+			margin-left: auto;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

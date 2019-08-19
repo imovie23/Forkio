@@ -1,0 +1,84 @@
+.menu {
+	position: relative;
+	background-color: #333;
+
+	@include for-size(mobile-landscape) {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin-top: 15px;
+		background-color: transparent;
+	}
+
+	@include for-size(desktop) {
+		margin: 0;
+	}
+
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		height: 10px;
+		background-color: #333;
+
+		@include for-size(mobile-landscape) {
+			display: none;
+		}
+	}
+
+	&__item-link {
+		position: relative;
+		display: block;
+		padding: 27px 30px 28px;
+		border-bottom: 2px solid #3b3b3b;
+		font-size: 26px;
+		line-height: 1.2;
+		text-decoration: none;
+		color: $white;
+		outline: none;
+		transition: color .2s;
+
+		@include for-size(mobile-landscape) {
+			padding: 10px;
+			border-bottom: none;
+			color: $primary;
+			font-size: 16px;
+			@include font($Montserrat, 700);
+		}
+
+		@include for-size(tablet) {
+			padding: 10px 25px;
+		}
+
+		&:hover {
+			@include for-size(desktop) {
+				@media(hover: hover) and (pointer: fine) {
+					color: $white;
+				}
+			}
+		}
+
+		&.active {
+			color: $primary;
+
+			&::before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				display: block;
+				width: 8px;
+				height: 52px;
+				background-color: $primary;
+
+				@include for-size(mobile-landscape) {
+					display: none;
+				}
+			}
+		}
+	}
+}
