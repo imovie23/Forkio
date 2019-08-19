@@ -37,14 +37,17 @@ html, body {
   min-width: fit-content;
   width: 256px;
   @include flex(center, column);
-  flex: 1 1 auto;
+  //flex: 1 1 auto;
   background-color: rgba(255, 255, 255, .1);
   margin: 0 0 14px 0;
+  flex-basis: 90%;
 
   &--highlighted {
     width: 290px;
     background-color: $highlighted;
     margin: 0 0 16px 0;
+    flex-basis: 100%;
+
   }
 
   &__header {
@@ -181,10 +184,12 @@ html, body {
   .table {
     margin: 0 20px 41px 18px;
     width: 40%;
+    flex-basis: 40%;
 
     &--highlighted {
       width: 45%;
       margin: 0 10px 41px 0;
+      flex-basis: 43%;
     }
 
   }
