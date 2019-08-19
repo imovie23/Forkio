@@ -61,7 +61,7 @@
 			}
 		}
 
-		&:active {
+		&.active {
 			color: $primary;
 
 			&::before {
