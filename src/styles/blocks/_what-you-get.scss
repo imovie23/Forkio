@@ -1,23 +1,17 @@
-@import "../mixins";
-@import "../fonts";
-@import "../variables";
 
-html, body {
-
-  min-width: 320px;
-
-  max-width: 1200px;
-
+.opportunities-parent {
+  background-color: $opportunitiesBGColor;
+  @include flex(center, column);
 }
 
 .opportunities {
   @include flex(center, column);
-  background-color: $opportunitiesBGColor;
   padding: 25px 0 2px 0;
 
   &__tittle {
     padding: 0 28px 37px 21px;
-    font: 31px "Montserrat-Bold";
+    font-size: 31px;
+    @include font($Montserrat, 700);
     color: $opportunitiesTittleColor;
     text-align: center;
     line-height: 1.21;
@@ -30,6 +24,7 @@ html, body {
     background-repeat: no-repeat;
     background-position: 5px -5px;
     background-size: cover;
+    margin-bottom: 10px;
   }
 
 
@@ -46,28 +41,24 @@ html, body {
 
   &__image {
     margin: 0 0 26px 18px;
-    //width: 111px;
     height: 64px;
-    //background-image: url('../../img/icon.png');
     background-repeat: no-repeat;
 
     &--clock {
       margin: 0 0 24px -9px;
       width: 90px;
       height: 80px;
-      //background-image: url('../../img/icon2.png');
+
     }
     &--glass {
       margin: 0 0 21px -23px;
       width: 60px;
       height: 84px;
-      //background-image: url('../../img/icon3.png');
     }
     &--timer {
       margin: 8px 0 23px -10px;
       width: 71px;
       height: 71px;
-      //background-image: url('../../img/icon4.png');
     }
   }
 
@@ -77,13 +68,15 @@ html, body {
 
   &__tittle {
     padding: 0 0 12px 0;
-    font: 16px "Montserrat-Regular";
+    font-size: 16px;
+    @include font($Montserrat);
     color: $categoriesTittleColor;
   }
 
   &__sub-tittle {
     padding: 0 20px 0 21px;
-    font: 13px 'Lato-Regular';
+    font-size: 13px;
+    @include font($Lato);
     color: $trialColor;
     text-align: center;
     line-height: 1.62;
@@ -91,7 +84,7 @@ html, body {
 }
 
 
-@media screen and (min-width: 480px) {
+@include for-size(mobile-landscape) {
 
   .opportunities {
     padding: 45px 0 2px 0;
@@ -113,7 +106,6 @@ html, body {
 
     &__image {
       margin: 15px 5px 13px 2px;
-      //width: 197px;
       height: 64px;
 
       &--clock {
@@ -151,7 +143,7 @@ html, body {
 
 }
 
-@media screen and (min-width: 992px) {
+@include for-size(desktop) {
 
   .opportunities {
 
@@ -189,6 +181,20 @@ html, body {
       &--correct {
         margin-left: -9px
       }
+    }
+
+    &:first-child {
+      padding-right: 15px
+    }
+    &__image--clock {
+      margin-left: -15px;
+      margin-right: 15px;
+    }
+
+    &__image--timer {
+      margin-top: 15px;
+      margin-left: -10px;
+      margin-right: 10px;
     }
   }
 

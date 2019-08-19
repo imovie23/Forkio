@@ -1,25 +1,19 @@
-@import "../mixins";
 
-
-@import "../fonts";
-@import "../variables";
-
-
-html, body {
-  min-width: 320px;
-  max-width: 1200px;
-}
-
-.subscript {
+.subscript-parent {
   background-color: $bgcSubColor;
   background-image: url('../../img/Layer_sub.png');
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.subscript {
+  //min-width: 320px;
   @include flex(center, column);
   padding: 64px 10px 79px 10px;
 
   &__tittle {
-    font: 28px 'Montserrat-Bold';
+    font-size: 28px;
+    @include font($Montserrat, 700);
     color: $whiteColor;
     text-transform: capitalize;
     text-align: center;
@@ -55,7 +49,8 @@ html, body {
     height: 97px;
     @include flex(center, column);
     background-color: rgba(255, 255, 255, .1);
-    font: 24px "Montserrat-Regular";
+    font-size: 24px;
+    @include font($Montserrat);
     color: $whiteColor;
     text-transform: uppercase;
     padding: 10px 0 0 0;
@@ -78,7 +73,8 @@ html, body {
   }
 
   &__symbol {
-    font: 60px "Montserrat-Regular";
+    font-size: 60px;
+    @include font($Montserrat);
     color: $whiteColor;
 
     &--highlighted {
@@ -87,7 +83,8 @@ html, body {
   }
 
   &__number {
-    font: 60px "Montserrat-Bold";
+    font-size: 60px;
+    @include font($Montserrat, 700);
     color: $whiteColor;
 
     &--highlighted {
@@ -96,7 +93,8 @@ html, body {
   }
 
   &__times {
-    font: 14px "Montserrat-Regular";
+    font-size: 14px;
+    @include font($Montserrat);
     color: rgba(255, 255, 255, .2);
     text-transform: uppercase;
     padding: 0 0 36px 0;
@@ -133,7 +131,8 @@ html, body {
   }
 
   &__licence-txt {
-    font: 16px "Montserrat-Regular";
+    font-size: 16px;
+    @include font($Montserrat);
     color: $whiteColor;
     text-transform: capitalize;
     line-height: 1.67;
@@ -154,7 +153,8 @@ html, body {
   width: 160px;
   height: 42px;
   background-color: rgba(255, 255, 255, .1);
-  font: 15px "Montserrat-Regular";
+  font-size: 15px;
+  @include font($Montserrat);
   color: $whiteColor;
   border-radius: 22px;
   text-decoration: none;
@@ -168,7 +168,7 @@ html, body {
   }
 }
 
-@media screen and (min-width: 481px) {
+@include for-size(mobile-landscape) {
 
   .subscript {
 
@@ -184,19 +184,23 @@ html, body {
   .table {
     margin: 0 20px 41px 18px;
     width: 40%;
-    flex-basis: 40%;
+    flex-basis: 30%;
 
     &--highlighted {
       width: 45%;
       margin: 0 10px 41px 0;
-      flex-basis: 43%;
+      flex-basis: 38%;
+    }
+
+    &:last-child {
+      margin: 0 20px 41px 5px;
     }
 
   }
 
 }
 
-@media screen and (min-width: 993px) {
+@include for-size(desktop) {
 
   .subscript {
     padding: 64px 10px 79px 10px;
@@ -217,24 +221,23 @@ html, body {
     min-width: 211px;
     width: calc(20% + 4em);
     max-width: 290px;
-    height: 460px;
-
+    flex-basis: 45%;
 
     &:last-child {
-      margin: 0 0 0 15px;
+      margin: 0 0 0 10px;
     }
 
 
     &--highlighted {
       width: 299px;
       margin: 6px 0 0 0;
-      height: 560px;
+      flex-basis: 55%;
     }
 
   }
   .btn-purchase:hover {
     background-color: $hoverBtn;
-    font-family: "Montserrat-Bold", sans-serif;
+    @include font($Montserrat, 700);
     color: $txtHover;
 
   }
