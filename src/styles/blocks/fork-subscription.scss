@@ -1,14 +1,13 @@
 @import "../mixins";
 
-
 @import "../fonts";
 @import "../variables";
 
 
 html, body {
-  min-width: 320px;
-  max-width: 1200px;
-}
+   min-width: 320px;
+   max-width: 1200px;
+ }
 
 .subscript {
   background-color: $bgcSubColor;
