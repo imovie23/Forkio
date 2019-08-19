@@ -1,28 +1,25 @@
-@import '../../styles/fonts';
-@import "../../styles/mixins";
-@import "../../styles/variables";
-
-html, body {
-  min-width: 320px;
-  max-width: 1200px;
-  height: 100%;
+.editor-parent {
+  background-color: $whiteColor;
 }
+
 
 .editor {
   @include flex(center, column);
   width: 100%; //!!!!!!!!
   padding: 30px 10px 0 10px;
-  background-color: $whiteColor;
+
 
   &__txt-trial {
-    font: 14px 'Montserrat-Regular';
+    font-size: 14px;
+    @include font($Montserrat);
     text-transform: capitalize;
     color: $trialColor;
     padding-bottom: 58px;
   }
 
   &__tittle {
-    font: 26px 'Montserrat-Bold';
+    font-size: 26px;
+    @include font($Montserrat, 700);
     color: $revolEditorColor;
     line-height: 1.62;
     text-transform: uppercase;
@@ -32,7 +29,8 @@ html, body {
 
   &__sub-tittle {
     padding: 0 18px 33px 16px;
-    font: 14px 'Lato-Regular';
+    font-size: 14px;
+    @include font($Lato);
     color: $revolSubTittleColor;
     line-height: 1.48;
     text-align: center;
@@ -106,7 +104,7 @@ html, body {
   }
 }
 
-@media screen and (min-width: 480px) {
+@include for-size(mobile-landscape) {
 
   .editor {
     padding: 43px 10px 0 10px;
@@ -127,7 +125,7 @@ html, body {
 
 }
 
-@media screen and (min-width: 1200px) {
+@include for-size(desktop) {
   .editor {
     &__tittle {
       font-size: 54px;
