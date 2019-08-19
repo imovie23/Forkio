@@ -184,12 +184,16 @@
   .table {
     margin: 0 20px 41px 18px;
     width: 40%;
-    flex-basis: 40%;
+    flex-basis: 30%;
 
     &--highlighted {
       width: 45%;
       margin: 0 10px 41px 0;
-      flex-basis: 43%;
+      flex-basis: 38%;
+    }
+
+    &:last-child {
+      margin: 0 20px 41px 5px;
     }
 
   }
