@@ -1,0 +1,54 @@
+.header {
+	min-width: 320px;
+	background-color: $headerBg;
+
+	&__wrap {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		padding: 4px 10px;
+		align-items: center;
+
+		@include for-size(mobile-landscape) {
+			padding: 20px 10px;
+		}
+
+		@include for-size(desktop) {
+			padding: 30px 10px;
+		}
+	}
+
+	&__nav {
+		position: absolute;
+		left: 0;
+		top: 100%;
+		width: 100%;
+		padding: 0 10px;
+		display: none;
+
+		@include for-size(mobile-landscape) {
+			position: static;
+			display: block;
+			order: 1;
+			padding: 0;
+		}
+
+		@include for-size(desktop) {
+			order: 0;
+			width: auto;
+			margin-right: 25px;
+			margin-left: auto;
+		}
+
+		&.is-open {
+			display: block;
+		}
+	}
+
+	&__toggle-wrap {
+		@include for-size(mobile-landscape) {
+			display: none;
+		}
+	}
+}
