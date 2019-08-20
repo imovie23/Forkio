@@ -25,6 +25,7 @@
 		top: 100%;
 		width: 100%;
 		padding: 0 10px;
+		z-index: 100;
 		display: none;
 
 		@include for-size(mobile-landscape) {
