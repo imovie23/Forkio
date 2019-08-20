@@ -14,7 +14,7 @@
   &__tittle {
     font-size: 28px;
     @include font($Montserrat, 700);
-    color: $whiteColor;
+    color: $white;
     text-transform: capitalize;
     text-align: center;
     line-height: 1.49;
@@ -23,25 +23,26 @@
 }
 
 .parent-table {
-  @include flex(center, row wrap);
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: auto;
+  justify-content: center;
+  justify-items: center;
+  grid-gap: 14px;
+  width: 100%;
   padding: 0 5px 0 5px;
 }
 
 .table {
   min-width: fit-content;
-  width: 256px;
+  width: 90%;
   @include flex(center, column);
-  //flex: 1 1 auto;
   background-color: rgba(255, 255, 255, .1);
-  margin: 0 0 14px 0;
-  flex-basis: 90%;
+
 
   &--highlighted {
-    width: 290px;
+    width: 100%;
     background-color: $highlighted;
-    margin: 0 0 16px 0;
-    flex-basis: 100%;
-
   }
 
   &__header {
@@ -51,7 +52,7 @@
     background-color: rgba(255, 255, 255, .1);
     font-size: 24px;
     @include font($Montserrat);
-    color: $whiteColor;
+    color: $white;
     text-transform: uppercase;
     padding: 10px 0 0 0;
     margin-bottom: 24px;
@@ -75,7 +76,7 @@
   &__symbol {
     font-size: 60px;
     @include font($Montserrat);
-    color: $whiteColor;
+    color: $white;
 
     &--highlighted {
       font-size: 84px;
@@ -85,7 +86,7 @@
   &__number {
     font-size: 60px;
     @include font($Montserrat, 700);
-    color: $whiteColor;
+    color: $white;
 
     &--highlighted {
       font-size: 84px;
@@ -108,7 +109,7 @@
     width: 60px;
     height: 5px;
     border: none;
-    background-color: $lineColor;
+    background-color: $primary;
     margin: 0 0 26px 0;
 
     &--highlighted {
@@ -133,7 +134,7 @@
   &__licence-txt {
     font-size: 16px;
     @include font($Montserrat);
-    color: $whiteColor;
+    color: $white;
     text-transform: capitalize;
     line-height: 1.67;
     text-align: center;
@@ -155,7 +156,7 @@
   background-color: rgba(255, 255, 255, .1);
   font-size: 15px;
   @include font($Montserrat);
-  color: $whiteColor;
+  color: $white;
   border-radius: 22px;
   text-decoration: none;
   text-transform: uppercase;
@@ -177,22 +178,31 @@
     }
   }
   .parent-table {
-    @include flex(center, row wrap);
-    flex: 1 1 auto;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0;
   }
 
   .table {
     margin: 0 20px 41px 18px;
-    width: 40%;
-    flex-basis: 30%;
+    height: 457px;
+
+    &__header {
+      height: 114px;
+
+      &--highlighted {
+        height: 133px;
+        margin-bottom: 10px;
+      }
+    }
 
     &--highlighted {
-      width: 45%;
       margin: 0 10px 41px 0;
-      flex-basis: 38%;
+      height: 560px;
+
     }
 
     &:last-child {
+      place-self:center;
       margin: 0 20px 41px 5px;
     }
 
@@ -211,17 +221,15 @@
     }
   }
   .parent-table {
-    @include flex(center, row);
-    flex: 1 1 10em;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 0;
 
   }
 
   .table {
-    margin: 0 10px 0 0;
-    min-width: 211px;
-    width: calc(20% + 4em);
+    margin: 0 0 0 0;
     max-width: 290px;
-    flex-basis: 45%;
+    place-self:center;
 
     &:last-child {
       margin: 0 0 0 10px;
@@ -229,9 +237,8 @@
 
 
     &--highlighted {
-      width: 299px;
+      max-width: 299px;
       margin: 6px 0 0 0;
-      flex-basis: 55%;
     }
 
   }
