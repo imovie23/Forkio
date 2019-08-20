@@ -6,11 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp",
-    "build": "gulp build --prod"
+    "build": "gulp build --prod",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "homepage": "https://github.com/imovie23/imovie23.github.io.git",
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/plugin-transform-runtime": "^7.5.5",
@@ -20,6 +22,7 @@
     "babel-loader": "^8.0.6",
     "browser-sync": "^2.26.7",
     "del": "^5.0.0",
+    "gh-pages": "^2.1.1",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.2.0",
     "gulp-debug": "^4.0.0",
